@@ -24,10 +24,6 @@ resource "aws_security_group" "alb" {
 
   }
 
-  tags = {
-    Name = local.name
-  }
-
 }
 
 /* This subnet only gets created when there is only one AZ being deployed so 
@@ -107,12 +103,6 @@ resource "aws_lb_listener" "http" {
 
 }
 
-data "aws_acm_certificate" "issued" {
-  domain      = "*.easternlai.me"
-  statuses    = ["ISSUED"]
-  most_recent = true
-}
-
 resource "aws_lb_listener" "https" {
   load_balancer_arn = aws_alb.portfolio.arn
   port              = 443
@@ -124,11 +114,6 @@ resource "aws_lb_listener" "https" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.frontend.arn
   }
-}
-
-data "aws_route53_zone" "easternlai-me" {
-  name         = "easternlai.me."
-  private_zone = false
 }
 
 resource "aws_route53_record" "alb_alias" {

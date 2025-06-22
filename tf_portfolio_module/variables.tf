@@ -1,7 +1,3 @@
-locals {
-  name = "${var.env}-portfolio-${var.region}"
-}
-
 variable "env" {
   type = string
 }
@@ -24,4 +20,8 @@ variable "private_subnets" {
 
 variable "vpc_cidr" {
   type = string
+}
+
+variable "jumpbox" {
+  type = bool
 }

@@ -14,10 +14,10 @@ locals {
 }
 
 module "portfolio" {
-  source = "../tf_portfolio_module"
-  env    = var.env
-  region = var.region
-
+  source             = "../tf_portfolio_module"
+  env                = var.env
+  region             = var.region
+  jumpbox            = var.jumpbox
   vpc_cidr           = local.vpc_cidr
   availability_zones = local.availability_zones
   public_subnets     = local.public_subnets

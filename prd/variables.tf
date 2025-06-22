@@ -19,3 +19,8 @@ variable "az_count" {
     error_message = "You have exceeded the number of available AZs."
   }
 }
+
+variable "jumpbox" {
+  type    = bool
+  default = true
+}
