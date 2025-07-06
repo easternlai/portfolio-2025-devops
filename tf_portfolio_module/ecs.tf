@@ -63,7 +63,7 @@ resource "aws_ecs_task_definition" "portfolio" {
   container_definitions = jsonencode([
     {
       name  = "${local.name}-frontend"
-      image = "856660075226.dkr.ecr.us-west-2.amazonaws.com/portfolio-frontend-2025:latest"
+      image = var.ecr_repo_frontend
       #   cpu       = 10
       #   memory    = 512
       essential = true

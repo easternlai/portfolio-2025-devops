@@ -21,17 +21,6 @@ variable "az_count" {
 }
 
 variable "jumpbox" {
-  type        = bool
-  default     = true
-  description = "Creates jumpbox in public subnet to access DB server in private subnet."
-}
-
-variable "ecr_repo_frontend" {
-  default = "856660075226.dkr.ecr.us-west-2.amazonaws.com/portfolio-frontend-2025:latest"
-  type    = string
-}
-
-variable "ecr_repo_backend" {
-  default = "856660075226.dkr.ecr.us-west-2.amazonaws.com/portfolio-2025:latest"
-  type    = string
+  type    = bool
+  default = true
 }

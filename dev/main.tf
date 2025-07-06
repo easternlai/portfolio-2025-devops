@@ -22,6 +22,4 @@ module "portfolio" {
   availability_zones = local.availability_zones
   public_subnets     = local.public_subnets
   private_subnets    = local.private_subnets
-  ecr_repo_frontend  = var.ecr_repo_frontend
-  ecr_repo_backend   = var.ecr_repo_backend
 }

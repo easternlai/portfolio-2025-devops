@@ -67,7 +67,7 @@ resource "aws_lambda_function" "portfolio" {
   package_type  = "Image"
   function_name = local.name
 
-  image_uri = "856660075226.dkr.ecr.us-west-2.amazonaws.com/portfolio-2025:latest"
+  image_uri = var.ecr_repo_backend
 
   role = aws_iam_role.lambda.arn
 

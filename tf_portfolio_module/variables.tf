@@ -25,3 +25,11 @@ variable "vpc_cidr" {
 variable "jumpbox" {
   type = bool
 }
+
+variable "ecr_repo_frontend" {
+  type = string
+}
+
+variable "ecr_repo_backend" {
+  type = string
+}

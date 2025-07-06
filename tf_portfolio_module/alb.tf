@@ -37,7 +37,7 @@ resource "aws_subnet" "placeholder" {
   vpc_id = aws_vpc.portfolio.id
 
   availability_zone = "${var.region}d"
-  cidr_block        = "10.0.32.0/24"
+  cidr_block        = var.public_subnets[(length(var.public_subnets) - 1)]
 
   tags = {
     Name = "${local.name}-alb-placeholder"
